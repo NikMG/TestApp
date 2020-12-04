@@ -40,10 +40,12 @@ const regTitle = /^[a-zA-Z0-9_-]{5,50}|'&#8734;'$/;
         } else if(dot < 1) {
             Error(num, 3, "");
             num.style.borderColor = '#d0d2eb';
-            num.value = '&#8734;'+parseInt(num.value)+"."+"00";
+            num.value =  "&pound;"+parseInt(num.value)+"."+"00";
+
         }else {
             Error(num, 3, "");
             num.style.borderColor = '#d0d2eb';
+
         }
     });
 
