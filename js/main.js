@@ -7,7 +7,7 @@ let fields = ValidForm.querySelectorAll('.field');
 let error = document.querySelectorAll('.error');
 let i;
 let dot = num.value.indexOf(',');
-const regTitle = /^[a-zA-Z0-9_-]{5,50}|'&#8734;'$/;
+const regTitle = /^[a-zA-Z0-9_-]{5,50}$/;
 
 
     const Error = (from, i, elem) => {
@@ -31,23 +31,7 @@ const regTitle = /^[a-zA-Z0-9_-]{5,50}|'&#8734;'$/;
         }
     });
 
-    num.addEventListener('blur', (event) => {
-        event.preventDefault();
 
-        if (!num.value) {
-            Error(num, 3, "Please enter fee");
-            return false;
-        } else if(dot < 1) {
-            Error(num, 3, "");
-            num.style.borderColor = '#d0d2eb';
-            num.value =  "&pound;"+parseInt(num.value)+"."+"00";
-
-        }else {
-            Error(num, 3, "");
-            num.style.borderColor = '#d0d2eb';
-
-        }
-    });
 
 
 
