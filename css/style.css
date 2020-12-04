@@ -169,3 +169,13 @@ input{
 input:focus{
     border-color: #793ff6;
 }
+
+button{
+    outline: none;
+}
+
+.error{
+    color: red;
+}
+
+

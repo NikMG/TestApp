@@ -9,22 +9,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form>
+    <form class="validForm">
         <section>
             <div class="container one">
                 <div class="detail">Your quiz details:</div>
                     <div class="spacer">
                         <label>Quiz title<br>
-                            <input type="text" placeholder="Enter quiz title"/><br>
+                            <input class="title field" type="text" placeholder="Enter quiz title"/><br>
                             <small>The title can't be longer than 50 chars.</small><br>
+                            <div class="error"></div>
                         </label>
                     </div>
                     <label>Quiz logo<br>
                         <div class="fake_input">
-                            <input type="file"/>
+                            <input class="logo field" type="file"/>
                             <div class="fake_button"><input type="button" class="fake_button_input" value="Uploa d c ustom lo go"/></div>
                             <div class="fake"><input type="text" class="fake_file_input" readonly/></div>
                             <small id="file">.JPG, .PNG only</small>
+                            <div class="error"></div>
                         </div>
                     </label>
             </div>
@@ -32,7 +34,8 @@
                 <div class="detail">Select your quiz topic:</div>
                     <div class="spacer">
                         <label>Category<br>
-                            <input list="category" type="text" id="choose_cat" name="choose_cat" placeholder="Choose category"/><br>
+                            <input class="cat field" list="category" type="text" id="choose_cat" name="choose_cat" placeholder="Choose category"/><br>
+
                             <datalist id="category">
                                 <option>buisness</option>
                                 <option>manadgement</option>
@@ -40,16 +43,18 @@
                                 <option>relax</option>
                                 <option>experience</option>
                             </datalist>
+                            <div class="error"></div>
                         </label>
                     </div>
                     <label>Quiz entry fee<br>
-                        <input type="number" placeholder="Enter your fee"/><br>
+                        <input class="num field" type="number" placeholder="Enter your fee"/><br>
                         <small>Min.entry fee is &#163;5.00.</small>
+                        <div class="error"></div>
                     </label>
             </div>
         </section>
-        <button type="submit">Proceed</button>
+        <button type="submit" class="validBtn">Proceed</button>
     </form>
-<script rel="script" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
