@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    background-color: #eff2fb;
+    font-family: Roboto;
+}
+
+::-webkit-input-placeholder {
+    color: #abacc8;
+}
+
+::-ms-input-placeholder{
+    color: #abacc8;
+}
+
+::-moz-placeholder{
+    color: #abacc8;
+}
+
+
+section{
+    display: flex;
+
+}
+
+
+.one{
+    margin: 179px 0px 0px 115px;
+}
+
+.two{
+    margin: 178px 0px 0px 70px;
+}
+
+
+
+::placeholder{
+    color: #abacc8;
+
+}
+
+
+
+.detail{
+    margin-bottom: 25px;
+    color: #383376;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: -1px;
+}
+
+label input{
+    margin-top: 19px;
+    font-weight: bolder;
+    letter-spacing: -0.7px;
+    font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 455px;
+    background-color: #eff2fb;
+    border-color: #d0d2eb;
+    padding-bottom: 19px;
+    color: #383376;
+    border-bottom-width: 3px;
+
+}
+
+label{
+    color: #3b3c5b;
+    font-size: 14px;
+}
+
+input[type='file']{
+    opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    position: relative;
+    z-index: 3;
+    height: 34px;
+    width: 300px;
+    margin-bottom: -40px;
+
+}
+
+
+
+.fake{
+    positon: relative;
+    z-index: 2;
+}
+
+.fake_file_input{
+    border-radius: 30px;
+    behavior: url(PIE.htc);
+    position: relative;
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 8px;
+    height: 50px;
+    background-color: #dce2f2;
+}
+
+.fake_input{
+    position: relative;
+}
+
+label input[type='file']{
+    margin-top: 8px;
+}
+
+.fake_button{
+    position: absolute;
+    z-index: 1;
+}
+
+.fake_button_input{
+    border-radius: 30px;
+    position: relative;
+    width: 150px;
+    height: 33px;
+    background-color: #7b3dfa;
+    font-size: 11px;
+    color: #fffbff;
+    text-align: center;
+    margin-left: 153px;
+    bottom: 20px;
+    padding-top: 8px;
+}
+
+#file{
+    margin-left: 185px;
+}
+
+.spacer{
+    margin-bottom: 44px;
+}
+
+input#choose_cat::placeholder{
+    color: #383376;
+}
+
+input::-webkit-calendar-picker-indicator{
+    opacity: 1;
+    color: #ff3ea7;
+}
+
+button{
+
+    width: 476px;
+    height: 61px;
+    border-radius: 30px;
+    margin: 82px 0px 179px 362px;
+    background-color: #ff3fa6;
+    color: #fffcff;
+    font-size: 20px;
+    border: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0px;
+}
+
+input{
+    outline: none;
+}
+
+input:focus{
+    border-color: #793ff6;
+}

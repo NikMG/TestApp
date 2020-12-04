@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form>
+        <section>
+            <div class="container one">
+                <div class="detail">Your quiz details:</div>
+                    <div class="spacer">
+                        <label>Quiz title<br>
+                            <input type="text" placeholder="Enter quiz title"/><br>
+                            <small>The title can't be longer than 50 chars.</small><br>
+                        </label>
+                    </div>
+                    <label>Quiz logo<br>
+                        <div class="fake_input">
+                            <input type="file"/>
+                            <div class="fake_button"><input type="button" class="fake_button_input" value="Uploa d c ustom lo go"/></div>
+                            <div class="fake"><input type="text" class="fake_file_input" readonly/></div>
+                            <small id="file">.JPG, .PNG only</small>
+                        </div>
+                    </label>
+            </div>
+            <div class="container two">
+                <div class="detail">Select your quiz topic:</div>
+                    <div class="spacer">
+                        <label>Category<br>
+                            <input list="category" type="text" id="choose_cat" name="choose_cat" placeholder="Choose category"/><br>
+                            <datalist id="category">
+                                <option>buisness</option>
+                                <option>manadgement</option>
+                                <option>opportunity</option>
+                                <option>relax</option>
+                                <option>experience</option>
+                            </datalist>
+                        </label>
+                    </div>
+                    <label>Quiz entry fee<br>
+                        <input type="number" placeholder="Enter your fee"/><br>
+                        <small>Min.entry fee is &#163;5.00.</small>
+                    </label>
+            </div>
+        </section>
+        <button type="submit">Proceed</button>
+    </form>
+<script rel="script" src="js/main.js"></script>
+</body>
+</html>
