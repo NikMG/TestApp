@@ -42,10 +42,10 @@ if(empty($cat)){
     $isValid_c = true;
 }
 
-if(preg_match($pattern, $num) && !empty($num) && $num >= 5){
+if(preg_match($pattern, $num) && !empty($num)){
     $info_num = "£".$FormatNum;
     $isValid_n = true;
-}else if(!preg_match($pattern1, $num) | empty($num) | $num < 5){
+}else if(!preg_match($pattern1, $num) | empty($num)){
     $info_num = "£"."0.00";
     $isValid_n = false;
 }else{
