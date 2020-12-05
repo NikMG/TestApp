@@ -14,11 +14,11 @@
         <section>
             <div class="two">
                 <section>
-                <div class="log">
-               <img src="img/form.jpg" alt="logo" width="78" height="78">
+                <div class="log" id="log">
+               <img src="<?php echo './upload/'.$_FILES['logo']['name']; ?>" alt="logo" width="80" height="80" style="border-radius: 15px;">
                 </div>
                 <div class="ttl">
-                    <div class="title">
+                    <div class="titlo">
                     <?php echo $_POST['title'] ?>
                     </div>
                     <div class="fe">
@@ -26,8 +26,8 @@
                             Entry Fee:
                         </section>
                     </div>
-                </div>
                     <div class="price"><?php echo $_POST['fee'] ?></div>
+                </div>
                     </section>
             </div>
             <div class="three">
@@ -36,6 +36,7 @@
                 </section>
             </div>
         </section>
+        <button onclick='location.href="index.php"' type="button" class="">Create another one!</button>
     </div>
 
 

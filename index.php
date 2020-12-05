@@ -36,11 +36,11 @@
                         <label>Category<br>
                             <input class="cat field" list="category" <?php if(isset($class_cat) && $class_cat == true){ echo "style='border-color: red;' "; } ?> type="text" id="choose_cat" name="choose_cat" placeholder="Choose category"/><br>
                             <datalist id="category">
-                                <option>buisness</option>
-                                <option>manadgement</option>
-                                <option>opportunity</option>
-                                <option>relax</option>
-                                <option>experience</option>
+                                <option>Business</option>
+                                <option>Manadgement</option>
+                                <option>Opportunity</option>
+                                <option>Relax</option>
+                                <option>Experience</option>
                             </datalist>
                             <div class="error" style="margin-top: 12px;"><?php if(isset($info_cat)){ echo $info_cat; } ?></div>
                         </label>

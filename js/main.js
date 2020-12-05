@@ -14,6 +14,7 @@ const pound = {style: 'currency', currency: 'GBP'};
 const regNum = /^[0-9.\u00A3]{1,50}$/;
 const regNum1 = /^[0-9.]{1,50}$/;
 const validExt = [".jpg", ".png"];
+
 const Error = (from, i, elem) => {
         console.log("error");
         from.style.borderColor = 'red';

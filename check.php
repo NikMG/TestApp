@@ -6,10 +6,11 @@ $isValid_t = false;
 $isValid_f = false;
 $isValid_c = false;
 $isValid_n = false;
-$Tlen = strlen($title);
 $NumCheck = is_numeric();
 $FormatNum = number_format($num, 2);
 $File = $_FILES['logo']['name'];
+$FileTempName = $_FILES['logo']['tmp_name'];
+$targetPath = './upload/'.$File;
 $FileName = trim(strip_tags($File));
 $Ext = pathinfo($FileName, PATHINFO_EXTENSION);
 $AllowedTypes = array("jpg", "png");
@@ -21,16 +22,13 @@ if(empty($title)){
     $info_title = "Please provide a name for your quiz";
     $class_title = true;
     $isValid_t= false;
-}else if($Tlen < 5){
-    $info_title = "Can't be less than 5 characters!";
-    $class_title = true;
-    $isValid_t= false;
 }else{
     $isValid_t= true;
 }
 foreach ($AllowedTypes as $i) {
     if($Ext == $i){
        $isValid_f= true;
+       move_uploaded_file($FileTempName, $targetPath);
         break;
     }else{
         $isValid_f= false;
