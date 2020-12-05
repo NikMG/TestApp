@@ -26,7 +26,17 @@
                             Entry Fee:
                         </section>
                     </div>
-                    <div class="price"><?php echo $_POST['fee'] ?></div>
+                    <div class="price">
+                        <?php
+                        $pattern1 = '/^[0-9.£]{1,50}$/';
+                        $FormatNum = number_format($_POST['fee'], 2);
+                    if(!preg_match(pattern1, $_POST['fee'])){
+                        echo "£".$FormatNum;
+                    }else{
+                        echo $_POST['fee'];
+                    }
+                        ?>
+                    </div>
                 </div>
                     </section>
             </div>
