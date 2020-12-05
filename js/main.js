@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
+
+
 let ValidForm = document.querySelector('.validForm');
 let Title = ValidForm.querySelector('.title');
 let Logo = ValidForm.querySelector('.logo');
@@ -5,9 +9,11 @@ let Categ = ValidForm.querySelector('.cat');
 let num = ValidForm.querySelector('.num');
 let fields = ValidForm.querySelectorAll('.field');
 let error = document.querySelectorAll('.error');
+let isValid = false;
 const pound = {style: 'currency', currency: 'GBP'};
 const regTitle = /^[a-zA-Z0-9_-]{5,50}$/;
 const regNum = /^[0-9.\u00A3]{1,50}$/;
+const regNum1 = /^[0-9.]{1,50}$/;
 const validExt = [".jpg", ".png"];
 const Error = (from, i, elem) => {
         console.log("error");
@@ -19,29 +25,36 @@ const Error = (from, i, elem) => {
 function ValidTitle(){
     if (!regTitle.test(Title.value) && Title.value) {
         Error(Title, 0, "Can't be less than 5 characters!");
+        isValid = false;
     } else if (!Title.value) {
         Error(Title, 0, "Please provide a name for your quiz");
+        isValid = false;
     } else {
         Error(Title, 0, "");
         Title.style.borderColor = '#d0d2eb';
+        isValid = true;
     }
 }
 
 function ValidNum(){
     if(!regNum.test(num.value) | !num.value){
         num.value = "\u00A3"+"0.00";
-        return false;
-    }else{
+        isValid = false;
+    }else if(regNum1.test(num.value) && num.value){
         num.value = new Intl.NumberFormat('en-IN', pound).format(num.value);
+    }else{
+        isValid = true;
     }
 }
 
 function ValidCat(){
     if(!Categ.value){
         Error(Categ, 2, "Please select a category");
+        isValid = false;
     }else{
         Error(Categ, 2, "");
         Categ.style.borderColor = '#d0d2eb';
+        isValid = true;
     }
 }
 
@@ -56,35 +69,45 @@ function ValidFile(){
                 break;
             }
         }
-        if(!blnValid){
-            alert("Wrong ex");
+        if(!blnValid | !Logo.value){
             Logo.value = "";
-            return false;
+
         }
+    }else{
+        isValid = false;
     }
 }
 
 
-    Title.addEventListener('blur', (event) => {
+for(let j = 0; j < fields.length; j++){
+    fields[j].addEventListener("blur", (event) => {
+        event.preventDefault();
+        if(j == 0){
+            ValidTitle();
+        }
+        if(j == 1){
+            ValidFile();
+        }
+        if(j == 2){
+            ValidCat();
+        }
+        if(j == 3){
+            ValidNum();
+        }
+    });
+}
+
+    ValidForm.addEventListener("submit", (event) => {
         event.preventDefault();
         ValidTitle();
-    });
-
-    num.addEventListener('blur', (event) => {
-        event.preventDefault();
         ValidNum();
-    });
-
-    Categ.addEventListener('blur', (event) => {
-        event.preventDefault();
         ValidCat();
-    });
-
-    Logo.addEventListener('blur', (event) => {
-        event.preventDefault();
         ValidFile();
+        console.log(isValid);
+        if(isValid){
+            ValidForm.submit();
+        }
     });
-
-
+});
 
 
