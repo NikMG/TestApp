@@ -34,10 +34,10 @@ function ValidTitle(){
 }
 
 function ValidNum(){
-    if(!regNum.test(num.value) | !num.value){
+    if(!regNum.test(num.value) | !num.value | num.value < 5){
         num.value = "\u00A3"+"0.00";
         isValid = false;
-    }else if(regNum1.test(num.value) && num.value){
+    }else if(regNum1.test(num.value) && num.value >= 5){
         num.value = new Intl.NumberFormat('en-IN', pound).format(num.value);
     }else{
         isValid = true;

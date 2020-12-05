@@ -6,7 +6,6 @@ $isValid_t = false;
 $isValid_f = false;
 $isValid_c = false;
 $isValid_n = false;
-$NumCheck = is_numeric();
 $FormatNum = number_format($num, 2);
 $File = $_FILES['logo']['name'];
 $FileTempName = $_FILES['logo']['tmp_name'];
@@ -43,10 +42,10 @@ if(empty($cat)){
     $isValid_c = true;
 }
 
-if(preg_match($pattern, $num) && !empty($num)){
+if(preg_match($pattern, $num) && !empty($num) && $num >= 5){
     $info_num = "£".$FormatNum;
     $isValid_n = true;
-}else if(!preg_match($pattern1, $num) | empty($num)){
+}else if(!preg_match($pattern1, $num) | empty($num) | $num < 5){
     $info_num = "£"."0.00";
     $isValid_n = false;
 }else{
