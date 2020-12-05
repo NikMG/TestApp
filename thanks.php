@@ -12,11 +12,28 @@
     <div class="container one">
         <div class="detail">Quiz created, thank you!</div>
         <section>
-            <container>
-
-            </>
-            <div class="container three">
-
+            <div class="two">
+                <section>
+                <div class="log">
+               <img src="img/form.jpg" alt="logo" width="78" height="78">
+                </div>
+                <div class="ttl">
+                    <div class="title">
+                    <?php echo $_POST['title'] ?>
+                    </div>
+                    <div class="fe">
+                        <section class="fee">
+                            Entry Fee:
+                        </section>
+                    </div>
+                </div>
+                    <div class="price"><?php echo $_POST['fee'] ?></div>
+                    </section>
+            </div>
+            <div class="three">
+                <section class="cat">
+                    Quiz category: <div class="categ"><?php echo $_POST['choose_cat'] ?></div>
+                </section>
             </div>
         </section>
     </div>

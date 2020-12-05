@@ -15,7 +15,7 @@
                 <div class="detail">Your quiz details:</div>
                     <div class="spacer">
                         <label>Quiz title<br>
-                            <input class="title field" name="title" type="text" <?php if(isset($class_title) && $class_title == true){ echo "style='border-color: red;' "; } ?>placeholder="Enter quiz title"/><br>
+                            <input class="title field" minlength="5" name="title" type="text" <?php if(isset($class_title) && $class_title == true){ echo "style='border-color: red;' "; } ?>placeholder="Enter quiz title"/><br>
                             <small>The title can't be longer than 50 chars.</small><br>
                             <div class="error" style="margin-top: 18px;"><?php if(isset($info_title)){ echo $info_title; } ?></div>
                         </label>

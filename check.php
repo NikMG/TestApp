@@ -55,6 +55,7 @@ if(preg_match($pattern, $num) && !empty($num)){
     $isValid_n = true;
 }
 if($isValid_t && $isValid_f && $isValid_c && $isValid_n){
+    header('HTTP/1.1 307 Temporary Redirect');
     header('Location:thanks.php');
 }
 
