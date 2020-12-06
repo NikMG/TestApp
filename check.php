@@ -6,7 +6,6 @@ $isValid_t = false;
 $isValid_f = false;
 $isValid_c = false;
 $isValid_n = false;
-$FormatNum = number_format($num, 2);
 $File = $_FILES['logo']['name'];
 $FileTempName = $_FILES['logo']['tmp_name'];
 $targetPath = './upload/'.$File;
@@ -16,6 +15,12 @@ $AllowedTypes = array("jpg", "png");
 
 $pattern = '/^[0-9.]{1,50}$/';
 $pattern1 = '/^[0-9.£]{1,50}$/';
+
+if(preg_match($pattern, $num)){
+    $FormatNum = number_format($num, 2);
+}else{
+    $FormatNum = $num;
+}
 
 if(empty($title)){
     $info_title = "Please provide a name for your quiz";
@@ -42,10 +47,10 @@ if(empty($cat)){
     $isValid_c = true;
 }
 
-if(preg_match($pattern, $num) && !empty($num) && $FormatNum >= 5){
+if(preg_match($pattern, $num) && !empty($num)){
     $info_num = "£".$FormatNum;
     $isValid_n = true;
-}else if(!preg_match($pattern1, $num) | empty($num) | $FormatNum < 5){
+}else if(!preg_match($pattern1, $num) | empty($num)){
     $info_num = "£"."0.00";
     $isValid_n = false;
 }else{
