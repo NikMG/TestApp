@@ -28,17 +28,17 @@
                     </div>
                     <div class="price">
                         <?php
+                        $$fmt = new NumberFormatter( 'en-IN', NumberFormatter::CURRENCY );
+                        $val = $fmt->formatCurrency($_POST['fee'], 'GBP');
+                        $pattern = '/^[0-9£]{1,50}$/';
                         $pattern1 = '/^[0-9.]{1,50}$/';
-                        if(preg_match($pattern1, $_POST['fee'])){
-                            $FormatNum = number_format($_POST['fee'], 2);
-                        }else{
-                            $FormatNum = $_POST['fee'];
-                        }
-                    if(preg_match($pattern1, $_POST['fee'])){
-                        echo "£".$FormatNum;
+                     if(preg_match($pattern1, $_POST['fee'])){
+                         echo $val;
+                    }else if(preg_match($pattern, $_POST['fee'])){
+                        echo $_POST['fee'].".00";
                     }else{
                          echo $_POST['fee'];
-                    }
+                     }
                         ?>
                     </div>
                 </div>
