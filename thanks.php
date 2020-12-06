@@ -30,11 +30,11 @@
                         <?php
                         $pattern1 = '/^[0-9.]{1,50}$/';
                         if(preg_match($pattern1, $_POST['fee'])){
-                            $FormatNum = number_format($num, 2);
+                            $FormatNum = number_format($_POST['fee'], 2);
                         }else{
                             $FormatNum = $_POST['fee'];
                         }
-                    if(preg_match(pattern1, $_POST['fee'])){
+                    if(preg_match($pattern1, $_POST['fee'])){
                         echo "£".$FormatNum;
                     }else{
                          echo $_POST['fee'];
