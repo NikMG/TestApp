@@ -28,7 +28,7 @@
                     </div>
                     <div class="price">
                         <?php
-                        $$fmt = new NumberFormatter( 'en-IN', NumberFormatter::CURRENCY );
+                        $fmt = new NumberFormatter( 'en-IN', NumberFormatter::CURRENCY );
                         $val = $fmt->formatCurrency($_POST['fee'], 'GBP');
                         $pattern = '/^[0-9£]{1,50}$/';
                         $pattern1 = '/^[0-9.]{1,50}$/';
