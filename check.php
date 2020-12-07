@@ -8,19 +8,15 @@ $isValid_c = false;
 $isValid_n = false;
 $File = $_FILES['logo']['name'];
 $FileTempName = $_FILES['logo']['tmp_name'];
+$fmt = new NumberFormatter( 'en-IN', NumberFormatter::CURRENCY );
+$val = $fmt->formatCurrency($_POST['fee'], 'GBP');
 $targetPath = './upload/'.$File;
 $FileName = trim(strip_tags($File));
+$numCheck = str_replace('£', '', $num);
 $Ext = pathinfo($FileName, PATHINFO_EXTENSION);
 $AllowedTypes = array("jpg", "png");
-
 $pattern = '/^[0-9.]{1,50}$/';
 $pattern1 = '/^[0-9.£]{1,50}$/';
-
-if(preg_match($pattern, $num)){
-    $FormatNum = number_format($num, 2);
-}else{
-    $FormatNum = $num;
-}
 
 if(empty($title)){
     $info_title = "Please provide a name for your quiz";
@@ -47,10 +43,10 @@ if(empty($cat)){
     $isValid_c = true;
 }
 
-if(preg_match($pattern, $num) && !empty($num)){
-    $info_num = "£".$FormatNum;
+if(preg_match($pattern, $num) && !empty($num) && $numCheck >= 5){
+    $info_num = $val;
     $isValid_n = true;
-}else if(!preg_match($pattern1, $num) | empty($num)){
+}else if(!preg_match($pattern1, $num) | empty($num) | $numCheck < 5){
     $info_num = "£"."0.00";
     $isValid_n = false;
 }else{
